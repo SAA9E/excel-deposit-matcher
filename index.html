@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엑셀 내역 대조기</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        body { font-family: 'Pretendard', sans-serif; padding: 40px; background-color: #f4f7f6; color: #333; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; }
+        .upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .upload-box { border: 2px dashed #cbd5e0; padding: 20px; border-radius: 10px; text-align: center; transition: 0.3s; }
+        .upload-box:hover { border-color: #3182ce; background-color: #ebf8ff; }
+        input[type="file"] { margin-top: 10px; width: 100%; }
+        .btn-start { display: block; width: 100%; padding: 15px; margin-top: 30px; background-color: #3182ce; color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; }
+        .btn-start:hover { background-color: #2b6cb0; }
+        #result { margin-top: 30px; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0; line-height: 1.8; background-color: #fff; display: none; }
+        .duplicate-info { color: #e53e3e; font-size: 0.9em; margin-left: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📊 내역 대조 대시보드</h1>
+    
+    <div class="upload-grid">
+        <div class="upload-box">
+            <strong>📂 출석부 업로드</strong>
+            <input type="file" id="attendanceFile" accept=".xlsx, .xls">
+        </div>
+        <div class="upload-box">
+            <strong>📂 입출금내역 업로드</strong>
+            <input type="file" id="bankFile" accept=".xlsx, .xls">
+        </div>
+    </div>
+
+    <button class="btn-start" onclick="processFiles()">데이터 대조 시작</button>
+
+    <div id="result"></div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
