@@ -17,12 +17,54 @@
         .btn-start:hover { background-color: #2b6cb0; }
         #result { margin-top: 30px; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0; line-height: 1.8; background-color: #fff; display: none; }
         .duplicate-info { color: #e53e3e; font-size: 0.9em; margin-left: 10px; }
+
+        .notice-box {
+    background-color: #fffaf0;
+    border: 1px solid #fbd38d;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-size: 0.95em;
+    color: #744210;
+}
+.notice-box h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: #9c4221;
+}
+.notice-box ul {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+}
+.notice-box li {
+    margin-bottom: 8px;
+}
+code {
+    background: #feebc8;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+}
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>📊 내역 대조 대시보드</h1>
+
+    <div class="notice-box">
+    <h3>⚠️ 사용 전 주의사항 (꼭 읽어주세요!)</h3>
+    <ul>
+        <li><strong>필수 항목명:</strong> 
+            출석부에는 <code>이름</code>, 입출금내역에는 <code>거래기록사항</code>이라는 글자가 첫 줄(헤더)에 반드시 포함되어야 합니다.
+        </li>
+        <li><strong>시트 위치:</strong> 각 엑셀 파일의 <strong>첫 번째 시트</strong>에 있는 데이터만 읽어옵니다.</li>
+        <li><strong>매칭 방식:</strong> '거래기록사항'에 적힌 글자 중에 출석부의 '이름'이 포함되어 있으면 일치하는 것으로 간주합니다. 
+            <br><small>(예: '요가1홍길동'은 출석부의 '홍길동'과 매칭 성공)</small>
+        </li>
+        <li><strong>개인정보 보호:</strong> 업로드한 파일은 서버로 전송되지 않으며, 사용자의 브라우저 내에서만 처리된 후 즉시 휘발됩니다.</li>
+    </ul>
+</div>
     
     <div class="upload-grid">
         <div class="upload-box">
